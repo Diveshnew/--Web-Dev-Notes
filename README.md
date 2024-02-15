@@ -128,17 +128,19 @@ Client ----> Next JS
 ```
 
 
-## Javascript Notes
+# Notes
 
-### Prototype Chain
-How does Prototypal Inheritance work?
+## JAVASCRIPT ADVANCED CONCEPTS
 
-Prototype Chain
-The prototype chain is a mechanism that allows objects to inherit properties and methods from other objects. Every object can have exactly one prototype object. That prototype object can also have a prototype object, and so on, creating a chain of inheritied properties and methods. The end of this chain is called the null prototype.
+## :link:Prototype Chain
+> How does Prototypal Inheritance work?
 
-In general, you don’t need to think about the prototype chain when doing everyday JavaScript development. However, it is important to understand how it works because it’s the basis for the class keyword and essential knowledge as you dive deeper into the language.
+### `Prototype Chain`
+The [prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) is a mechanism that allows objects to inherit properties and methods from other objects. Every object can have exactly one prototype object. That prototype object can also have a prototype object, and so on, creating a chain of inheritied properties and methods. The end of this chain is called the `null` prototype.
 
-In the example below, we see how an dog can inherit properties from the animal object, which itself inherits properties from the root Object.prototype.
+In general, you don’t need to think about the prototype chain when doing everyday JavaScript development. However, it is important to understand how it works because it’s the basis for the `class` keyword and essential knowledge as you dive deeper into the language.
+
+In the example below, we see how an dog can inherit properties from the animal object, which itself inherits properties from the root `Object.prototype`.
 
 ```Javascript
 const animal = {
@@ -158,10 +160,10 @@ Object.getPrototypeOf(animal) === Object.prototype; // true
 Object.getPrototypeOf(Object.prototype) === null; // true
 ```
 
-### Destructuring
-Use destructuring to work with objects with ease.
+## :hammer_and_wrench:Destructuring
+> Use destructuring to work with objects with ease.
 
-Destructuring Examples
+### `Destructuring Examples`
 ```Javascript
 // Object destructuring
 const person = {
@@ -182,11 +184,11 @@ const fruits = ['apple', 'banana', 'orange'];
 const [first, second, third] = fruits;
 ```
 
-### Spread
-Use the spread syntax to combine objects
+## :swimming_man:Spread
+> Use the spread syntax to combine objects
 
-Spread Syntax
-The spread syntax ... is a relatively new operator that was introduced in ES2018. It provides a concise way to combine objects and arrays.
+### `Spread Syntax`
+The spread syntax `...` is a relatively new operator that was introduced in ES2018. It provides a concise way to combine objects and arrays.
 ```Javascript
 const obj = { 
     foo: 1, 
@@ -199,6 +201,7 @@ const newObj = {
 };
 console.log(newObj); // { foo: 1, bar: 2, baz: 3 }
 ```
+
 It’s also useful for combining arrays.
 
 ```Javascript
@@ -207,11 +210,11 @@ const arr2 = [4, 5, 6];
 const arr3 = [...arr1, ...arr2];
 ```
 
-### Optional Chaining
-Call object properties safely
+## :chains:Optional Chaining
+> Call object properties safely
 
-Optional Chaining
-Optional chaining ? is a relatively new operator that was introduced in ES2020. It allows you to call object properties safely, without throwing an error. When calling properties without this operator, you many crash your applcation with the error Cannot read property 'foo' of undefined.
+### `Optional Chaining`
+Optional chaining `?` is a relatively new operator that was introduced in ES2020. It allows you to call object properties safely, without throwing an error. When calling properties without this operator, you many crash your applcation with the error `Cannot read property 'foo' of undefined`.
 
 ```Javascript
 const person = { };
@@ -222,11 +225,11 @@ console.log(foo); // Uncaught TypeError: Cannot read property 'bar' of undefined
 const dude = person?.name; // undefined
 ```
 
-### Nullish Coalescing
-How nullish coalescing is realted to truthy and falsy values
+## :safety_vest:Nullish Coalescing
+> How nullish coalescing is realted to truthy and falsy values
 
-Nullish Coalescing
-Nullish coalescing is a relativly new operator that was introduced in ES2020. It is similar to the logical OR operator ||, but it only returns the right-hand side if the left-hand side is null or undefined.
+### `Nullish Coalescing`
+Nullish coalescing is a relativly new operator that was introduced in ES2020. It is similar to the logical OR operator `||`, but it only returns the right-hand side if the left-hand side is `null` or `undefined.`
 
 ```Javascript
 const foo = null ?? 'bar';
@@ -236,10 +239,10 @@ const foo = 0 ?? 'bar';
 console.log(foo); // 0
 ```
 
-### Higher Order Functions
-What is a higer order function or HOF?
+## :gem:Higher Order Functions
+> What is a higer order function or HOF?
 
-Higher Order Functions
+### `Higher Order Functions`
 A higher order function is a function that takes a function as an argument, or returns a function. They are commonly used in functional programming, and are a powerful tool for abstracting away complexity.
 ```Javascript
 // A function that takes a function as an argument
@@ -256,7 +259,9 @@ function math(x, y, operator) {
 math(5, 2, add); // 7
 ```
 
-### Closures
+## :ice_cream:Closures
+> What is a closure?
+
 A closure is a function that has access to the parent scope, even after the parent function has closed. JS will automatically store the state of a closure in the heap memory, even after the parent function has returned. This behavior makes them useful for encapsulating private variables.
 ```Javascript
 function encapsulatedState(x) {
@@ -268,10 +273,10 @@ function encapsulatedState(x) {
 }
 ```
 
-### Array Tricks
-Useful techniques for working with JS arrays
+## :candy:Array Tricks
+> Useful techniques for working with JS arrays
 
-Create a Range of Numbers
+### `Create a Range of Numbers`
 ```Javascript
 const range = Array(100).fill(0).map((_, i) => i + 1);
 
@@ -280,24 +285,24 @@ const range = Array(100).fill(0).map((_, i) => i + 1);
 const range = [...Array(100).keys()];
 ```
 
-Remove Duplicates from an Array
+### `Remove Duplicates from an Array`
 ```Javascript
 const unique = [...new Set(arr)];
 ```
 
-Get a Random Element
+### `Get a Random Element`
 ```Javascript
 const random = arr[Math.floor(Math.random() * arr.length)];
 ```
 
-Loop over a Key-Value Pair
+### `Loop over a Key-Value Pair`
 ```Javascript
 for(const [i, val] of arr.entries()) {
     console.log(i, val);
 }
 ```
 
-Homework: Array Methods to Study
+### `Homework: Array Methods to Study`
 ```Javascript
 arr.forEach();
 arr.map()
@@ -307,22 +312,23 @@ arr.findIndex();
 arr.reduce();
 ```
 
-### History of JavaScript
-How JavaScript evolved into the language we know today
+## :cowboy_hat_face:History of JavaScript
+> How JavaScript evolved into the language we know today
 
-History of JavaScript
-Read the full Weird History of JavaScript article.
+### `History of JavaScript`
+Read the full [Weird History of JavaScript](https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb) article.
 
+#
 
-## Algorithms
+# :kiss:Algorithms
 
-### Cumulative Sum
-Solving basic algorithms with plain JavaScript
+## :speech_balloon:Cumulative Sum
+> Solving basic algorithms with plain JavaScript
 
-Cumulative Sum Interview Question
+### `Cumulative Sum Interview Question`
 Create a function that takes an array of numbers and returns a number that is the sum of all values in the array.
 
-Cumulative Sum Implementation
+### `Cumulative Sum Implementation`
 ```Javascript
 // Solution 1
 function cumSum(arr) {
@@ -344,15 +350,15 @@ console.log('sum: ', cumSum([1,3,5,7]));
 
 ```
 
-###  Binary Search
-How to implement binary search in JavaScript
+## :knife:Binary Search
+> How to implement binary search in JavaScript
 
-Binary search is a faster way to find an item in a sorted array with O(log n) time complexity, compared to a regular loop with O(n) time complexity.
+[Binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm) is a faster way to find an item in a sorted array with `O(log n)` time complexity, compared to a regular loop with `O(n)` time complexity.
 
-Binary Search Interview Question
+### `Binary Search Interview Question`
 Create a function that takes a sorted array and a target value. Return the index of the target value in the array. If the target value is not in the array, return -1.
 
-Binary Search Implementation
+### `Binary Search Implementation`
 ```Javascript
 function search(arr, target, start=0, end=arr.length-1) {
 
@@ -384,18 +390,18 @@ const arr = ['a', 'b', 'c', 'x', 'y', 'z'];
 console.log(search(arr, 'b'));
 ```
 
-### Least Recently Used (LRU) Cache
-How to implement an LRU cache in JavaScript
+## :basket:Least Recently Used (LRU) Cache
+> How to implement an LRU cache in JavaScript
 
-The LRU cache is one of the most commoly asked algorithm questions on interviews.
+The [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU) cache is one of the most commoly asked algorithm questions on interviews.
 
-LRU Interview Question
+### `LRU Interview Question`
 Create a data structure that implements the requirements of a Least Recently Used (LRU) cache with O(1) average time complexity.
-
-Initialize an object with a maxium capacity of elements.
-getItem Return the value of the key. Update cache with the most recently used key.
-putItem Create or update a key value pair in the cache. Evict the least recently used key if the size of keys exceeds the max capacity.
-LRU Implementation in JavaScript
+- Initialize an object with a maxium capacity of elements.
+- `getItem` Return the value of the key. Update cache with the most recently used key.
+- `putItem` Create or update a key value pair in the cache. Evict the least recently used key if the size of keys exceeds the max capacity.
+  
+### `LRU Implementation in JavaScript`
 ```Javascript
 export class LRU {
   constructor(capacity) {
@@ -437,23 +443,23 @@ cache.putItem('a', 1);
 cache.getItem('a');
 ```
 
-###  TDD with Vitest
-How to test JavaScript code with Vitest
+## :test_tube:	TDD with Vitest
+> How to test JavaScript code with Vitest
 
-Use Vitest to create a few basic unit test for the algorithims in the previous lessons.
+Use [Vitest](https://vitest.dev/) to create a few basic unit test for the algorithims in the previous lessons.
 ```Javascript
 npm init -y
 npm i -D vitest
 ```
 
-Update the package.json with a test script.
+Update the `package.json` with a test script.
 ```package.json
  "scripts": {
     "test": "vitest"
   },
 ```
 
-Vitest Basic Example
+### `Vitest Basic Example`
 ```javascript
 import { expect, test } from 'vitest';
 
